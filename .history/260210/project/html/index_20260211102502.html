@@ -1,0 +1,628 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>NOL Mock</title>
+
+  <!-- Pretendard (Webfont) -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css"
+  />
+
+<link rel="stylesheet" href="../css/style.css" />
+
+<style>
+/* Custom Dropdown */
+.custom-dropdown {
+  position: relative;
+  min-width: 220px;
+}
+
+.dropdown-trigger {
+  width: 100%;
+  height: 44px;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 0 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  font-weight: 900;
+  font-family: inherit;
+  font-size: 14px;
+  color: #111827;
+  transition: all 0.2s ease;
+}
+
+.dropdown-trigger:hover {
+  border-color: #4f46e5;
+  background-color: #f5f7ff;
+}
+
+.dropdown-trigger:focus {
+  outline: 2px solid #4f46e5;
+  outline-offset: 2px;
+}
+
+.dropdown-value {
+  flex: 1;
+  text-align: left;
+}
+
+.dropdown-arrow {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+  margin-left: 8px;
+}
+
+.dropdown-trigger[aria-expanded="true"] .dropdown-arrow {
+  transform: rotate(180deg);
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  width: 100%;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  z-index: 100;
+  overflow: hidden;
+}
+
+.dropdown-menu[hidden] {
+  display: none;
+}
+
+.dropdown-menu li {
+  padding: 14px 12px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  font-weight: 900;
+  font-size: 14px;
+  color: #111827;
+}
+
+.dropdown-menu li:hover,
+.dropdown-menu li[aria-selected="true"] {
+  background-color: #4f46e5;
+  color: #fff;
+}
+</style>
+</head>
+
+<body>
+  <!-- TOP HEADER -->
+  <header class="topbar">
+    <div class="topbar__inner">
+      <div class="logo"><img src="../assets/img_nol_brand_pc_default.svg" alt="NOL Logo" /></div>
+
+      <div class="search" role="search">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M10.5 18.5a8 8 0 1 1 0-16 8 8 0 0 1 0 16Z" stroke="currentColor" stroke-width="2"/>
+          <path d="M16.6 16.6 21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <input type="text" placeholder="어디로 떠나볼까요?" />
+      </div>
+
+      <nav class="top-actions" aria-label="상단 메뉴">
+        <a class="action" href="#">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 12a4.2 4.2 0 1 0 0-8.4A4.2 4.2 0 0 0 12 12Z" stroke="currentColor" stroke-width="2"/>
+            <path d="M4 21c1.8-4.2 14.2-4.2 16 0" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <span>마이</span>
+        </a>
+        <a class="action" href="#">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 21s-7-4.4-9.2-8.7C1.2 9.2 3.4 6 7 6c2 0 3.3 1 5 3 1.7-2 3-3 5-3 3.6 0 5.8 3.2 4.2 6.3C19 16.6 12 21 12 21Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+          </svg>
+          <span>찜</span>
+        </a>
+        <a class="action" href="#">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M7 7h14l-1.4 7.2a3 3 0 0 1-3 2.4H10.2a3 3 0 0 1-3-2.4L6 3H3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M10 21a1 1 0 1 0 0-2 1 1 0 0 0 0 2ZM18 21a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z" fill="currentColor"/>
+          </svg>
+          <span>장바구니</span>
+        </a>
+        <a class="action" href="#">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 8v5l3 2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" stroke="currentColor" stroke-width="2"/>
+          </svg>
+          <span>최근 본 상품</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <!-- PROMO -->
+    <section class="promo" aria-label="프로모션 배너">
+      <div class="promo__text">
+        <strong>가입하고 쿠폰 받으세요!</strong>
+        <small>신규회원 전용 혜택 지급</small>
+      </div>
+      <button class="promo__btn" type="button">
+        로그인/가입하기 <span aria-hidden="true">›</span>
+      </button>
+    </section>
+
+    <!-- CATEGORY ICONS -->
+    <section class="cat-row" aria-label="카테고리">
+      <button class="hamburger" aria-label="전체 메뉴">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+
+      <div class="cats">
+        <a class="cat" href="#">
+          <img class="cat__img" src="../assets/hqwqwIg3hlITA8su.gif" alt="">
+          <div class="cat__badge">수수료0원</div>
+          <div class="cat__label">NOL 티켓</div>
+        </a>
+
+        <a class="cat" href="#">
+          <img class="cat__img" src="../assets/hYhG3cbSXLAcEysI.png" alt="">
+          <div class="cat__label">항공</div>
+        </a>
+
+        <a class="cat" href="#">
+          <img class="cat__img" src="../assets/RNr1sE2q8UA2UeUt.png" alt="">
+          <div class="cat__label">해외숙소</div>
+        </a>
+
+        <a class="cat" href="#">
+          <img class="cat__img" src="../assets/8iDpw62B6rzvMdEj.png" alt="">
+          <div class="cat__label">해외투어티켓</div>
+        </a>
+
+        <a class="cat" href="#">
+          <img class="cat__img" src="../assets/18RIEdlD9kRdwi4l.png" alt="">
+          <div class="cat__label">해외패키지</div>
+        </a>
+
+        <a class="cat" href="#">
+          <img class="cat__img" src="../assets/rlxTeITMziWMEtre.png" alt="">
+          <div class="cat__label">호텔/리조트</div>
+        </a>
+
+        <a class="cat" href="#">
+          <img class="cat__img" src="../assets/rXvE3UHEQjKjfwY0.png" alt="">
+          <div class="cat__label">펜션/풀빌라</div>
+        </a>
+
+        <a class="cat" href="#">
+          <img class="cat__img" src="../assets/GyXHCDFQVOib8jB6.png" alt="">
+          <div class="cat__label">모텔</div>
+        </a>
+
+        <a class="cat" href="#">
+          <img class="cat__img" src="../assets/qf5b0xpM6bkaBUc8.png" alt="">
+          <div class="cat__label">국내레저</div>
+        </a>
+
+        <a class="cat" href="#">
+          <img class="cat__img" src="../assets/aT8RWDTOWuyTqMDA.png" alt="">
+          <div class="cat__badge">쏘카오픈</div>
+          <div class="cat__label">교통/쏘카</div>
+        </a>
+
+        <a class="cat" href="#">
+          <img class="cat__img" src="../assets/ic-nearme.png" alt="">
+          <div class="cat__label">내주변</div>
+        </a>
+      </div>
+    </section>
+
+    <!-- BOTTOM 3 BUTTONS -->
+    <section class="bottom-actions" aria-label="하단 바로가기">
+      <a class="bigbtn" href="#"><span class="bigbtn__icon">🎁<img src</span> NOL드로우</a>
+      <a class="bigbtn" href="#"><span class="bigbtn__icon">🗓️</span> 이번달쿠폰팩</a>
+      <a class="bigbtn" href="#"><span class="bigbtn__icon">🎉</span> 이벤트더보기</a>
+    </section>
+
+    <!-- ====== BELOW SECTIONS ====== -->
+
+    <!-- HERO 2-UP -->
+    <section class="nol-sec nol-hero">
+      <div class="nol-container">
+        <div class="nol-hero__rail">
+          <button class="nol-arrow nol-arrow--left" aria-label="이전">‹</button>
+
+          <div class="nol-hero__slides">
+            <img src="../assets/4HWbwfbivf9zK5mP.png" alt="해외여행 특가 배너" />
+          </div>
+          <div class="nol-hero__slides">
+            <img src="../assets/JVWIm7PqyKqIQhv6.png" alt="해외여행 특가 배너" />
+          </div>
+
+          <button class="nol-arrow nol-arrow--right" aria-label="다음">›</button>
+        </div>
+
+        <div class="nol-hero__meta">
+          <button class="nol-hero__pause" type="button" aria-label="일시정지">Ⅱ</button>
+          <div class="nol-dots" aria-hidden="true">
+            <span class="nol-dot nol-dot--active"></span>
+            <span class="nol-dot"></span>
+          </div>
+          <div class="nol-hero__count">04 / 09+</div>
+        </div>
+      </div>
+    </section>
+    <section class="nol-ticket-section">
+  <div class="nol-ticket-inner">
+    <div class="nol-ticket-header">
+      <h3 class="nol-ticket-title"><img src="../assets/img_nol_brand_pc_default.svg" alt="NOL 브랜드 로고"> 티켓</h3>
+      <div class="nol-ticket-tabs">
+        <button class="active">뮤지컬</button>
+        <button>콘서트</button>
+        <button>전시/행사</button>
+      </div>
+    </div>
+
+    <ul class="nol-ticket-list">
+      <li class="ticket-card">
+        <img class="nol-poster" src="../assets/P0004523_p.gif" alt="로미오와 줄리엣">
+        <p class="ticket-name">뮤지컬 &lt;로미오와 줄리엣&gt;</p>
+        <span class="ticket-place">한전아트센터</span>
+      </li>
+
+      <li class="ticket-card">
+        <img class="nol-poster" src="../assets/26000541_p.gif" alt="빌리 엘리어트">
+        <p class="ticket-name">뮤지컬 &lt;빌리 엘리어트&gt;</p>
+        <span class="ticket-place">블루스퀘어 우리은행홀</span>
+      </li>
+
+      <li class="ticket-card">
+        <img class="nol-poster" src="../assets/26001001_p.gif" alt="튜링머신">
+        <p class="ticket-name">튜링머신</p>
+        <span class="ticket-place">세종문화회관 S씨어터</span>
+      </li>
+    </ul>
+  </div>
+</section>
+
+    <!-- RECO -->
+    <section class="nol-sec">
+      <div class="nol-container">
+        <div class="nol-sec__head">
+          <h3>이런 상품은 어떠세요?</h3>
+          <div class="nol-sec__sub">최근 본 상품과 비슷한 상품</div>
+          <div class="nol-badge">광고</div>
+        </div>
+
+        <div class="nol-carousel">
+          <button class="nol-arrow nol-arrow--left" aria-label="이전">‹</button>
+
+          <div class="nol-track">
+            <a class="nol-card" href="#">
+              <div class="nol-card__img"><img src="../assets/reco_1.png" alt="상품 1" /></div>
+              <div class="nol-card__title">광안리 호텔 프리마베라 IN BUS</div>
+              <div class="nol-card__price"><em>62%</em> 46,000원~</div>
+            </a>
+            <a class="nol-card" href="#">
+              <div class="nol-card__img"><img src="../assets/reco_1.png" alt="상품 2" /></div>
+              <div class="nol-card__title">H Avenue 광안리점</div>
+              <div class="nol-card__price"><em>60%</em> 79,000원~</div>
+            </a>
+            <a class="nol-card" href="#">
+              <div class="nol-card__img"><img src="../assets/reco_1.png" alt="상품 3" /></div>
+              <div class="nol-card__title">부산 광안리 호텔 로칸바다다</div>
+              <div class="nol-card__price"><em>76%</em> 95,000원~</div>
+            </a>
+            <a class="nol-card" href="#">
+              <div class="nol-card__img"><img src="../assets/reco_1.png" alt="상품 4" /></div>
+              <div class="nol-card__title">하운드 광안리</div>
+              <div class="nol-card__price"><em>77%</em> 80,000원~</div>
+            </a>
+            <a class="nol-card" href="#">
+              <div class="nol-card__img"><img src="../assets/reco_1.png" alt="상품 5" /></div>
+              <div class="nol-card__title">H Avenue 광안리해변점</div>
+              <div class="nol-card__desc">다른 날짜 확인</div>
+            </a>
+          </div>
+
+          <button class="nol-arrow nol-arrow--right" aria-label="다음">›</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- RANK -->
+    <section class="nol-sec">
+      <div class="nol-container">
+        <div class="nol-sec__head nol-sec__head--row">
+          <h3>NOL 티켓 랭킹</h3>
+          <div class="nol-tabs" role="tablist" aria-label="티켓 카테고리">
+            <button class="nol-tab nol-tab--active" type="button">뮤지컬</button>
+            <button class="nol-tab" type="button">콘서트</button>
+            <button class="nol-tab" type="button">연극</button>
+            <button class="nol-tab" type="button">클래식/무용</button>
+            <button class="nol-tab" type="button">전시/행사</button>
+            <button class="nol-tab" type="button">아동/가족</button>
+          </div>
+        </div>
+
+        <div class="nol-carousel nol-carousel--poster">
+          <button class="nol-arrow nol-arrow--left" aria-label="이전">‹</button>
+
+          <div class="nol-track">
+            <a class="nol-poster" href="#">
+              <div class="nol-poster__img"><img src="../assets/632b17c3b0ecb2.60292758.png" alt="랭킹 1" /><img src="../assets/rank01.svg" alt="" class="nol-rank" /></div>
+              <div class="nol-poster__title">센과 치히로의 행방불명 오리지널 투어</div>
+              <div class="nol-poster__price"><span class="discount">25%</span> 89,000원~</div>
+              <div class="nol-poster__rating">★ 4.9 (12,458)</div>
+            </a>
+
+            <a class="nol-poster" href="#">
+              <div class="nol-poster__img"><img src="../assets/632b17c3b0ecb2.60292758.png" alt="랭킹 2" /><img src="../assets/rank02.svg" alt="" class="nol-rank" /></div>
+              <div class="nol-poster__title">뮤지컬 &lt;킹키부츠&gt;</div>
+              <div class="nol-poster__price"><span class="discount">30%</span> 77,000원~</div>
+              <div class="nol-poster__rating">★ 4.8 (8,932)</div>
+            </a>
+
+            <a class="nol-poster" href="#">
+              <div class="nol-poster__img"><img src="../assets/632b17c3b0ecb2.60292758.png" alt="랭킹 3" /><img src="../assets/rank03.svg" alt="" class="nol-rank" /></div>
+              <div class="nol-poster__title">뮤지컬 &lt;빌리 엘리어트&gt;</div>
+              <div class="nol-poster__price"><span class="discount">20%</span> 110,000원~</div>
+              <div class="nol-poster__rating">★ 4.7 (6,274)</div>
+            </a>
+
+            <a class="nol-poster" href="#">
+              <div class="nol-poster__img"><img src="../assets/632b17c3b0ecb2.60292758.png" alt="랭킹 4" /><img src="../assets/rank04.svg" alt="" class="nol-rank" /></div>
+              <div class="nol-poster__title">뮤지컬 &lt;비틀쥬스&gt;</div>
+              <div class="nol-poster__price"><span class="discount">15%</span> 99,000원~</div>
+              <div class="nol-poster__rating">★ 4.8 (5,621)</div>
+            </a>
+
+            <a class="nol-poster" href="#">
+              <div class="nol-poster__img"><img src="../assets/632b17c3b0ecb2.60292758.png" alt="랭킹 5" /><img src="../assets/rank05.svg" alt="" class="nol-rank" /></div>
+              <div class="nol-poster__title">뮤지컬 &lt;킹키부츠&gt; - 부산</div>
+              <div class="nol-poster__price"><span class="discount">25%</span> 66,000원~</div>
+              <div class="nol-poster__rating">★ 4.9 (4,774)</div>
+            </a>
+          </div>
+
+          <button class="nol-arrow nol-arrow--right" aria-label="다음">›</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- LIVE -->
+    <section class="nol-sec">
+      <div class="nol-container">
+        <div class="nol-sec__head nol-sec__head--row">
+          <h3>NOL live 놀라운 혜택!</h3>
+          <a class="nol-link" href="#">전체보기</a>
+        </div>
+
+        <div class="nol-carousel nol-carousel--live">
+          <button class="nol-arrow nol-arrow--left" aria-label="이전">‹</button>
+
+          <div class="nol-track">
+            <a class="nol-live" href="#">
+              <div class="nol-live__img">
+                <img src="../assets/632b17c3b0ecb2.60292758.png" alt="라이브 1" />
+                <span class="nol-chip">방송예정</span>
+              </div>
+              <div class="nol-live__title">[엘리시안 강촌] 아름다운 설경! 리프트권 특가!</div>
+              <div class="nol-live__time">오늘 15:00</div>
+            </a>
+
+            <a class="nol-live" href="#">
+              <div class="nol-live__img">
+                <img src="../assets/632b17c3b0ecb2.60292758.png" alt="라이브 2" />
+                <span class="nol-chip">방송예정</span>
+              </div>
+              <div class="nol-live__title">[켄싱턴 호텔&리조트] 켄싱턴 브랜드 총괄 특집</div>
+              <div class="nol-live__time">오늘 19:00</div>
+            </a>
+
+            <a class="nol-live" href="#">
+              <div class="nol-live__img">
+                <img src="../assets/632b17c3b0ecb2.60292758.png" alt="라이브 4" />
+                <span class="nol-chip nol-chip--dark">다시보기</span>
+              </div>
+              <div class="nol-live__title">[멜로라이브] 뮤지컬 &lt;킹키부츠&gt; 최대 30% 할인</div>
+              <div class="nol-live__meta"><em>30%</em> 56,000원~</div>
+            </a>
+
+            <a class="nol-live" href="#">
+              <div class="nol-live__img">
+                <img src="../assets/632b17c3b0ecb2.60292758.png" alt="라이브 4" />
+                <span class="nol-chip nol-chip--dark">다시보기</span>
+              </div>
+              <div class="nol-live__title">[멜로라이브] 뮤지컬 &lt;킹키부츠&gt; 최대 30% 할인</div>
+              <div class="nol-live__meta"><em>30%</em> 56,000원~</div>
+            </a>
+
+            <a class="nol-live" href="#">
+              <div class="nol-live__img">
+                <img src="../assets/632b17c3b0ecb2.60292758.png" alt="라이브 5" />
+                <span class="nol-chip nol-chip--dark">다시보기</span>
+              </div>
+              <div class="nol-live__title">[NOL LIVE] 25/26 비발디파크 리프트권</div>
+              <div class="nol-live__meta"><em>55%</em> 24,273원~</div>
+            </a>
+          </div>
+
+          <button class="nol-arrow nol-arrow--right" aria-label="다음">›</button>
+        </div>
+
+        <div class="nol-center">
+          <a class="nol-ghostbtn" href="#">NOL live 놀라운 혜택! 전체보기</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOTELCATION -->
+    <section class="nol-sec">
+      <div class="nol-container">
+        <div class="nol-sec__head nol-sec__head--row">
+          <h3>호캉스 어디로 갈까?</h3>
+          <div class="nol-tabs">
+            <button class="nol-tab nol-tab--active" type="button">강원</button>
+            <button class="nol-tab" type="button">제주</button>
+            <button class="nol-tab" type="button">경상</button>
+            <button class="nol-tab" type="button">전라충청</button>
+          </div>
+        </div>
+
+        <div class="nol-carousel">
+          <button class="nol-arrow nol-arrow--left" aria-label="이전">‹</button>
+
+          <div class="nol-track">
+            <a class="nol-card" href="#">
+              <div class="nol-poster__img"><img src="../assets/632b17c3b0ecb2.60292758.png" alt="랭킹 1" /><img src="../assets/rank01.svg" alt="" class="nol-rank" /></div>
+              <div class="nol-card__title">켄싱턴호텔 설악비치</div>
+              <div class="nol-card__price"><em>7%</em> 93,000원~</div>
+            </a>
+
+            <a class="nol-card" href="#">
+              <div class="nol-poster__img"><img src="../assets/632b17c3b0ecb2.60292758.png" alt="랭킹 2" /><img src="../assets/rank02.svg" alt="" class="nol-rank" /></div>
+              <div class="nol-card__title">켄싱턴호텔 설악비치</div>  
+              <div class="nol-card__price"><em>23%</em> 65,000원~</div>
+            </a>
+
+            <a class="nol-card" href="#">
+              <div class="nol-poster__img"><img src="../assets/632b17c3b0ecb2.60292758.png" alt="랭킹 3" /><img src="../assets/rank03.svg" alt="" class="nol-rank" /></div>
+              <div class="nol-card__title">강릉 씨마크 호텔</div>
+              <div class="nol-card__price"><em>67%</em> 286,000원~</div>
+            </a>
+
+            <a class="nol-card" href="#">
+              <div class="nol-poster__img"><img src="../assets/632b17c3b0ecb2.60292758.png" alt="랭킹 4" /><img src="../assets/rank04.svg" alt="" class="nol-rank" /></div>
+              <div class="nol-card__title">켄싱턴호텔 설악비치</div>
+              <div class="nol-card__price"><em>79%</em> 227,000원~</div>
+            </a>
+          </div>
+
+          <button class="nol-arrow nol-arrow--right" aria-label="다음">›</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="nol-footer">
+    <div class="nol-container">
+      <div class="nol-footer__top">
+        <div class="nol-footer__logo"><img src="../assets/img_nol_brand_pc_default.svg" alt="NOL Logo"></div>
+        
+        <!-- Custom Dropdown -->
+        <div class="custom-dropdown">
+          <input type="hidden" name="familySite" value="패밀리 사이트">
+          <button type="button" class="dropdown-trigger" aria-haspopup="listbox" aria-expanded="false" aria-label="패밀리 사이트 선택">
+            <span class="dropdown-value">패밀리 사이트</span>
+            <svg class="dropdown-arrow" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M4.427 6.427l3.396 3.396a.25.25 0 00.354 0l3.396-3.396A.25.25 0 0011.396 6H4.604a.25.25 0 00-.177.427z" fill="currentColor"/>
+            </svg>
+          </button>
+          <ul class="dropdown-menu" role="listbox" hidden>
+            <li role="option" data-value="패밀리 사이트" aria-selected="true" tabindex="0">패밀리 사이트</li>
+            <li role="option" data-value="야놀자" aria-selected="false" tabindex="0">야놀자</li>
+            <li role="option" data-value="인터파크" aria-selected="false" tabindex="0">인터파크</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="nol-footer__text">
+        <div>© Nol Universe Co., Ltd. All rights reserved.</div>
+        <div class="nol-footer__muted">데모용 푸터 영역입니다. 실제 약관/사업자 정보로 교체하세요.</div>
+      </div>
+    </div>
+  </footer>
+  
+  <script src="../js/script.js"></script>
+  
+  <script>
+  // Custom Dropdown
+  (function() {
+    const dropdown = document.querySelector('.custom-dropdown');
+    if (!dropdown) return;
+    
+    const trigger = dropdown.querySelector('.dropdown-trigger');
+    const menu = dropdown.querySelector('.dropdown-menu');
+    const valueDisplay = dropdown.querySelector('.dropdown-value');
+    const hiddenInput = dropdown.querySelector('input[type="hidden"]');
+    const options = menu.querySelectorAll('[role="option"]');
+    
+    // 드롭다운 열기/닫기
+    function toggleDropdown() {
+      const isExpanded = trigger.getAttribute('aria-expanded') === 'true';
+      
+      if (isExpanded) {
+        closeDropdown();
+      } else {
+        openDropdown();
+      }
+    }
+    
+    function openDropdown() {
+      trigger.setAttribute('aria-expanded', 'true');
+      menu.removeAttribute('hidden');
+    }
+    
+    function closeDropdown() {
+      trigger.setAttribute('aria-expanded', 'false');
+      menu.setAttribute('hidden', '');
+    }
+    
+    // 옵션 선택
+    function selectOption(option) {
+      const value = option.getAttribute('data-value');
+      
+      // 모든 옵션의 selected 상태 제거
+      options.forEach(opt => opt.setAttribute('aria-selected', 'false'));
+      
+      // 선택된 옵션 표시
+      option.setAttribute('aria-selected', 'true');
+      valueDisplay.textContent = value;
+      hiddenInput.value = value;
+      
+      closeDropdown();
+    }
+    
+    // 이벤트 리스너
+    trigger.addEventListener('click', toggleDropdown);
+    
+    options.forEach(option => {
+      option.addEventListener('click', () => selectOption(option));
+      
+      option.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          selectOption(option);
+        }
+      });
+    });
+    
+    // 외부 클릭으로 닫기
+    document.addEventListener('click', (e) => {
+      if (!dropdown.contains(e.target)) {
+        closeDropdown();
+      }
+    });
+    
+    // ESC 키로 닫기
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && trigger.getAttribute('aria-expanded') === 'true') {
+        closeDropdown();
+        trigger.focus();
+      }
+    });
+  })();
+  </script>
+</body>
+</html>

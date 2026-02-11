@@ -1,0 +1,632 @@
+/* Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Malgun Gothic", sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f5f5f5;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font: inherit;
+}
+
+/* Header */
+.main-header {
+  background-color: #fff;
+  border-bottom: 1px solid #e0e0e0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.logo-image {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.main-nav {
+  display: flex;
+  gap: 1.5rem;
+  flex: 1;
+}
+
+.nav-item {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #666;
+  transition: color 0.2s;
+}
+
+.nav-item:hover {
+  color: #333;
+}
+
+.header-actions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.action-item {
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: #ddd;
+  border-radius: 50%;
+}
+
+/* Hero Section */
+.hero-section {
+  background-color: #fff;
+  padding: 2rem 1rem;
+}
+
+.hero-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hero-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.search-tabs {
+  display: flex;
+  gap: 1rem;
+}
+
+.tab-item {
+  padding: 0.5rem 1.25rem;
+  border-radius: 1.25rem;
+  font-size: 0.9rem;
+  background-color: #f0f0f0;
+  transition: background-color 0.2s;
+}
+
+.tab-item.active {
+  background-color: #333;
+  color: #fff;
+}
+
+/* Banner Section */
+.banner-section {
+  max-width: 1200px;
+  margin: 1.5rem auto;
+  padding: 0 1rem;
+}
+
+.banner-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.banner-card {
+  border-radius: 0.75rem;
+  overflow: hidden;
+  min-height: 10rem;
+  display: flex;
+  align-items: center;
+  padding: 1.5rem;
+}
+
+.banner-blue {
+  background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%);
+}
+
+.banner-orange {
+  background: linear-gradient(135deg, #ff9a3d 0%, #ff7b1c 100%);
+}
+
+.banner-content {
+  width: 100%;
+  color: #fff;
+}
+
+.banner-full-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0.75rem;
+}
+
+/* Small Cards Section */
+.small-cards-section {
+  max-width: 1200px;
+  margin: 1.5rem auto;
+  padding: 0 1rem;
+}
+
+.small-cards-container {
+  display: flex;
+  gap: 1rem;
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+.small-card {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  background-color: #fafafa;
+}
+
+.card-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: #ddd;
+  border-radius: 0.25rem;
+}
+
+.card-label {
+  flex: 1;
+  height: 1rem;
+  background-color: #e0e0e0;
+  border-radius: 0.25rem;
+}
+
+/* Section Header */
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.tabs {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.tab {
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  color: #666;
+  border-radius: 1rem;
+  transition: all 0.2s;
+}
+
+.tab.active {
+  background-color: #333;
+  color: #fff;
+}
+
+.more-link {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Ranking Section */
+.ranking-section {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.ranking-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+}
+
+.ranking-card {
+  background-color: #fff;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.rank-number {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  width: 2rem;
+  height: 2rem;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.1rem;
+  border-radius: 0.25rem;
+  z-index: 1;
+}
+
+.card-image {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.card-info {
+  padding: 1rem;
+}
+
+.card-title {
+  height: 1rem;
+  background-color: #e0e0e0;
+  border-radius: 0.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.card-desc {
+  height: 0.75rem;
+  background-color: #eee;
+  border-radius: 0.25rem;
+  width: 70%;
+}
+
+/* Deals Section */
+.deals-section {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.deals-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.deal-card {
+  background-color: #fff;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.deal-badge {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  padding: 0.25rem 0.75rem;
+  background-color: rgba(255, 59, 48, 0.9);
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 700;
+  border-radius: 0.25rem;
+  z-index: 1;
+}
+
+.deal-image {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  aspect-ratio: 4 / 3;
+}
+
+.deal-info {
+  padding: 1rem;
+}
+
+.deal-title {
+  height: 1rem;
+  background-color: #e0e0e0;
+  border-radius: 0.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.deal-price {
+  height: 1.25rem;
+  background-color: #ddd;
+  border-radius: 0.25rem;
+  width: 60%;
+}
+
+/* Mid Banner */
+.mid-banner-section {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.mid-banner {
+  border-radius: 0.75rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.mid-banner-image {
+  width: 100%;
+  display: block;
+}
+
+/* Flight Section */
+.flight-ranking-section {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.flight-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+}
+
+.flight-card {
+  background-color: #fff;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.flight-image {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  aspect-ratio: 4 / 3;
+}
+
+.flight-info {
+  padding: 1rem;
+}
+
+.flight-title {
+  height: 1rem;
+  background-color: #e0e0e0;
+  border-radius: 0.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.flight-price {
+  height: 1.25rem;
+  background-color: #ddd;
+  border-radius: 0.25rem;
+  width: 65%;
+}
+
+/* Regional Section */
+.regional-section {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.regional-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.regional-card {
+  background-color: #fff;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.regional-card .card-image {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  aspect-ratio: 3 / 2;
+}
+
+.regional-card .card-info {
+  padding: 1rem;
+}
+
+/* Sports Section */
+.sports-section {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.sports-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.sports-card {
+  background-color: #fff;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.sports-card .card-image {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  aspect-ratio: 3 / 2;
+}
+
+.sports-card .card-info {
+  padding: 1rem;
+}
+
+/* Theater Section */
+.theater-section {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.theater-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.theater-card {
+  background-color: #fff;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.theater-card .card-image {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  aspect-ratio: 3 / 4;
+}
+
+.theater-card .card-info {
+  padding: 1rem;
+}
+
+/* Category Section */
+.category-section {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1rem;
+}
+
+.category-card {
+  background-color: #fff;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  text-align: center;
+}
+
+.category-card .card-image {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  aspect-ratio: 16 / 9;
+}
+
+.category-card .card-label {
+  height: 1rem;
+  background-color: #e0e0e0;
+  border-radius: 0.25rem;
+  margin: 0.75rem;
+}
+
+/* Footer */
+.main-footer {
+  background-color: #fff;
+  border-top: 1px solid #e0e0e0;
+  margin-top: 3rem;
+  padding: 2rem 1rem;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-links {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.footer-link {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.footer-info {
+  margin-bottom: 1.5rem;
+}
+
+.footer-info p {
+  font-size: 0.8rem;
+  color: #999;
+  line-height: 1.8;
+}
+
+.footer-icons {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.icon-item {
+  width: 2rem;
+  height: 2rem;
+  background-color: #ddd;
+  border-radius: 50%;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .ranking-grid,
+  .flight-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .deals-grid,
+  .regional-grid,
+  .sports-grid,
+  .theater-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .category-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .main-nav {
+    display: none;
+  }
+
+  .banner-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ranking-grid,
+  .flight-grid,
+  .deals-grid,
+  .regional-grid,
+  .sports-grid,
+  .theater-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .category-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .section-title {
+    font-size: 1.25rem;
+  }
+
+  .tabs {
+    flex-wrap: wrap;
+  }
+}

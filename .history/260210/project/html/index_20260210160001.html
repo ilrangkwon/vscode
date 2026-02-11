@@ -1,0 +1,456 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>NOL Mock</title>
+
+  <!-- Pretendard (Webfont) -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css"
+  />
+
+<link rel="stylesheet" href="../css/style.css" />
+</head>
+
+<body>
+  <!-- TOP HEADER -->
+  <header class="topbar">
+    <div class="topbar__inner">
+      <div class="logo"><img src="../assets/img_nol_brand_pc_default.svg" alt="NOL Logo" /></div>
+
+      <div class="search" role="search">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M10.5 18.5a8 8 0 1 1 0-16 8 8 0 0 1 0 16Z" stroke="currentColor" stroke-width="2"/>
+          <path d="M16.6 16.6 21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <input type="text" placeholder="어디로 떠나볼까요?" />
+      </div>
+
+      <nav class="top-actions" aria-label="상단 메뉴">
+        <a class="action" href="#">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 12a4.2 4.2 0 1 0 0-8.4A4.2 4.2 0 0 0 12 12Z" stroke="currentColor" stroke-width="2"/>
+            <path d="M4 21c1.8-4.2 14.2-4.2 16 0" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <span>마이</span>
+        </a>
+        <a class="action" href="#">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 21s-7-4.4-9.2-8.7C1.2 9.2 3.4 6 7 6c2 0 3.3 1 5 3 1.7-2 3-3 5-3 3.6 0 5.8 3.2 4.2 6.3C19 16.6 12 21 12 21Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+          </svg>
+          <span>찜</span>
+        </a>
+        <a class="action" href="#">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M7 7h14l-1.4 7.2a3 3 0 0 1-3 2.4H10.2a3 3 0 0 1-3-2.4L6 3H3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M10 21a1 1 0 1 0 0-2 1 1 0 0 0 0 2ZM18 21a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z" fill="currentColor"/>
+          </svg>
+          <span>장바구니</span>
+        </a>
+        <a class="action" href="#">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 8v5l3 2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" stroke="currentColor" stroke-width="2"/>
+          </svg>
+          <span>최근 본 상품</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <!-- PROMO -->
+    <section class="promo" aria-label="프로모션 배너">
+      <div class="promo__text">
+        <strong>가입하고 쿠폰 받으세요!</strong>
+        <small>신규회원 전용 혜택 지급</small>
+      </div>
+      <button class="promo__btn" type="button">
+        로그인/가입하기 <span aria-hidden="true">›</span>
+      </button>
+    </section>
+
+    <!-- CATEGORY ICONS -->
+    <section class="cat-row" aria-label="카테고리">
+      <button class="hamburger" aria-label="전체 메뉴">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+
+      <div class="cats">
+        <a class="cat" href="#">
+          <div class="cat__badge">수수료0원</div>
+          <div class="cat__icon">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M4 20h16V6H4v14Z" stroke="currentColor" stroke-width="2"/>
+              <path d="M7 10h10M7 14h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="cat__label">NOL 티켓</div>
+        </a>
+
+        <a class="cat" href="#"><div class="cat__icon">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M2.5 13.5 21 8l-7.5 13-2.2-6-8.8-1.5Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+          </svg>
+        </div><div class="cat__label">항공</div></a>
+
+        <a class="cat" href="#"><div class="cat__icon">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M4 20V9l8-5 8 5v11" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+            <path d="M9 20v-6h6v6" stroke="currentColor" stroke-width="2"/>
+          </svg>
+        </div><div class="cat__label">해외숙소</div></a>
+
+        <a class="cat" href="#"><div class="cat__icon">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M6 8h12v12H6V8Z" stroke="currentColor" stroke-width="2"/>
+            <path d="M8 6h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <path d="M9 12h6M9 15h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div><div class="cat__label">해외투어티켓</div></a>
+
+        <a class="cat" href="#"><div class="cat__icon">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 22s7-4 7-10a7 7 0 1 0-14 0c0 6 7 10 7 10Z" stroke="currentColor" stroke-width="2"/>
+            <path d="M12 13a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z" fill="currentColor"/>
+          </svg>
+        </div><div class="cat__label">해외패키지</div></a>
+
+        <a class="cat" href="#"><div class="cat__icon">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M4 20V8h16v12" stroke="currentColor" stroke-width="2"/>
+            <path d="M7 8V6a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v2" stroke="currentColor" stroke-width="2"/>
+            <path d="M9 12h6M9 15h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div><div class="cat__label">호텔/리조트</div></a>
+
+        <a class="cat" href="#"><div class="cat__icon">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M6 20V9a3 3 0 0 1 3-3h6a3 3 0 0 1 3 3v11" stroke="currentColor" stroke-width="2"/>
+            <path d="M9 11h6M9 14h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div><div class="cat__label">펜션/풀빌라</div></a>
+
+        <a class="cat" href="#"><div class="cat__icon">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M7 20V9l5-4 5 4v11" stroke="currentColor" stroke-width="2"/>
+          </svg>
+        </div><div class="cat__label">모텔</div></a>
+
+        <a class="cat" href="#"><div class="cat__icon">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M6 7h12v13H6V7Z" stroke="currentColor" stroke-width="2"/>
+            <path d="M9 4h6v3H9V4Z" stroke="currentColor" stroke-width="2"/>
+          </svg>
+        </div><div class="cat__label">국내레저</div></a>
+
+        <a class="cat" href="#">
+          <div class="cat__badge">쏘카오픈</div>
+          <div class="cat__icon">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M4 16V9a3 3 0 0 1 3-3h10a3 3 0 0 1 3 3v7" stroke="currentColor" stroke-width="2"/>
+              <path d="M7 16a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm10 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Z" fill="currentColor"/>
+            </svg>
+          </div>
+          <div class="cat__label">교통/쏘카</div>
+        </a>
+
+        <a class="cat" href="#"><div class="cat__icon">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 2v20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <path d="M12 5c5 2 7 6 7 9s-2 7-7 8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <path d="M12 5C7 7 5 11 5 14s2 7 7 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity=".6"/>
+          </svg>
+        </div><div class="cat__label">내주변</div></a>
+      </div>
+    </section>
+
+    <!-- BOTTOM 3 BUTTONS -->
+    <section class="bottom-actions" aria-label="하단 바로가기">
+      <a class="bigbtn" href="#"><span class="bigbtn__icon">🎁</span> NOL드로우</a>
+      <a class="bigbtn" href="#"><span class="bigbtn__icon">🗓️</span> 이번달쿠폰팩</a>
+      <a class="bigbtn" href="#"><span class="bigbtn__icon">🎉</span> 이벤트더보기</a>
+    </section>
+
+    <!-- ====== BELOW SECTIONS ====== -->
+
+    <!-- HERO 2-UP -->
+    <section class="nol-sec nol-hero">
+      <div class="nol-container">
+        <div class="nol-hero__rail">
+          <button class="nol-arrow nol-arrow--left" aria-label="이전">‹</button>
+
+          <div class="nol-hero__slides">
+            <img src="../assets/kFpQdWaIVoRc85c9.png" alt="해외여행 특가 배너" /></div>
+            </article>
+
+            <article class="nol-hero__slide nol-hero__slide--blue">
+              <div class="nol-hero__txt">
+                <h2>예술과 낭만이 있는 곳<br/>대학로 추천 공연</h2>
+                <p>공연 관람하면 음료가 1천원!</p>
+              </div>
+              <div class="nol-hero__img">
+                <img src="assets/hero_banner_2.png" alt="대학로 추천 공연 배너" />
+              </div>
+            </article>
+          </div>
+
+          <button class="nol-arrow nol-arrow--right" aria-label="다음">›</button>
+        </div>
+
+        <div class="nol-hero__meta">
+          <button class="nol-hero__pause" type="button" aria-label="일시정지">Ⅱ</button>
+          <div class="nol-dots" aria-hidden="true">
+            <span class="nol-dot nol-dot--active"></span>
+            <span class="nol-dot"></span>
+            <span class="nol-dot"></span>
+            <span class="nol-dot"></span>
+          </div>
+          <div class="nol-hero__count">04 / 09+</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RECO -->
+    <section class="nol-sec">
+      <div class="nol-container">
+        <div class="nol-sec__head">
+          <h3>이런 상품은 어떠세요?</h3>
+          <div class="nol-sec__sub">최근 본 상품과 비슷한 상품</div>
+          <div class="nol-badge">광고</div>
+        </div>
+
+        <div class="nol-carousel">
+          <button class="nol-arrow nol-arrow--left" aria-label="이전">‹</button>
+
+          <div class="nol-track">
+            <a class="nol-card" href="#">
+              <div class="nol-card__img"><img src="../assets/reco_1.png" alt="상품 1" /></div>
+              <div class="nol-card__title">광안리 호텔 프리마베라 IN BUS</div>
+              <div class="nol-card__price"><em>62%</em> 46,000원~</div>
+            </a>
+            <a class="nol-card" href="#">
+              <div class="nol-card__img"><img src="../assets/reco_1.png" alt="상품 2" /></div>
+              <div class="nol-card__title">H Avenue 광안리점</div>
+              <div class="nol-card__price"><em>60%</em> 79,000원~</div>
+            </a>
+            <a class="nol-card" href="#">
+              <div class="nol-card__img"><img src="../assets/reco_1.png" alt="상품 3" /></div>
+              <div class="nol-card__title">부산 광안리 호텔 로칸바다다</div>
+              <div class="nol-card__price"><em>76%</em> 95,000원~</div>
+            </a>
+            <a class="nol-card" href="#">
+              <div class="nol-card__img"><img src="../assets/reco_1.png" alt="상품 4" /></div>
+              <div class="nol-card__title">하운드 광안리</div>
+              <div class="nol-card__price"><em>77%</em> 80,000원~</div>
+            </a>
+            <a class="nol-card" href="#">
+              <div class="nol-card__img"><img src="../assets/reco_1.png" alt="상품 5" /></div>
+              <div class="nol-card__title">H Avenue 광안리해변점</div>
+              <div class="nol-card__desc">다른 날짜 확인</div>
+            </a>
+          </div>
+
+          <button class="nol-arrow nol-arrow--right" aria-label="다음">›</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- RANK -->
+    <section class="nol-sec">
+      <div class="nol-container">
+        <div class="nol-sec__head nol-sec__head--row">
+          <h3>NOL 티켓 랭킹</h3>
+          <div class="nol-tabs" role="tablist" aria-label="티켓 카테고리">
+            <button class="nol-tab nol-tab--active" type="button">뮤지컬</button>
+            <button class="nol-tab" type="button">콘서트</button>
+            <button class="nol-tab" type="button">연극</button>
+            <button class="nol-tab" type="button">클래식/무용</button>
+            <button class="nol-tab" type="button">전시/행사</button>
+            <button class="nol-tab" type="button">아동/가족</button>
+          </div>
+        </div>
+
+        <div class="nol-carousel nol-carousel--poster">
+          <button class="nol-arrow nol-arrow--left" aria-label="이전">‹</button>
+
+          <div class="nol-track">
+            <a class="nol-poster" href="#">
+              <div class="nol-poster__img"><img src="../assets/632b17c3b0ecb2.60292758.png" alt="랭킹 1" /><span class="nol-rank">1</span></div>
+              <div class="nol-poster__title">센과 치히로의 행방불명 오리지널 투어</div>
+              <div class="nol-poster__meta">예술의전당 오페라극장</div>
+              <div class="nol-poster__meta">2026.1.7 ~ 3.22</div>
+            </a>
+
+            <a class="nol-poster" href="#">
+              <div class="nol-poster__img"><img src="../assets/632b17c3b0ecb2.60292758.png" alt="랭킹 2" /><span class="nol-rank">2</span></div>
+              <div class="nol-poster__title">뮤지컬 &lt;킹키부츠&gt;</div>
+              <div class="nol-poster__meta">샤롯데씨어터</div>
+              <div class="nol-poster__meta">2025.12.17 ~ 2026.3.29</div>
+            </a>
+
+            <a class="nol-poster" href="#">
+              <div class="nol-poster__img"><img src="../assets/632b17c3b0ecb2.60292758.png" alt="랭킹 3" /><span class="nol-rank">3</span></div>
+              <div class="nol-poster__title">뮤지컬 &lt;빌리 엘리어트&gt;</div>
+              <div class="nol-poster__meta">블루스퀘어 우리은행홀</div>
+              <div class="nol-poster__meta">2026.4.12 ~ 7.26</div>
+            </a>
+
+            <a class="nol-poster" href="#">
+              <div class="nol-poster__img"><img src="../assets/632b17c3b0ecb2.60292758.png" alt="랭킹 4" /><span class="nol-rank">4</span></div>
+              <div class="nol-poster__title">뮤지컬 &lt;비틀쥬스&gt;</div>
+              <div class="nol-poster__meta">LG아트센터 서울 LG SIGNATURE 홀</div>
+              <div class="nol-poster__meta">2025.12.16 ~ 2026.3.22</div>
+            </a>
+
+            <a class="nol-poster" href="#">
+              <div class="nol-poster__img"><img src="../assets/632b17c3b0ecb2.60292758.png" alt="랭킹 5" /><span class="nol-rank">5</span></div>
+              <div class="nol-poster__title">뮤지컬 &lt;킹키부츠&gt; - 부산</div>
+              <div class="nol-poster__meta">부산 드림씨어터</div>
+              <div class="nol-poster__meta">2026.4.25 ~ 5.3</div>
+            </a>
+          </div>
+
+          <button class="nol-arrow nol-arrow--right" aria-label="다음">›</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- LIVE -->
+    <section class="nol-sec">
+      <div class="nol-container">
+        <div class="nol-sec__head nol-sec__head--row">
+          <h3>NOL live 놀라운 혜택!</h3>
+          <a class="nol-link" href="#">전체보기</a>
+        </div>
+
+        <div class="nol-carousel nol-carousel--live">
+          <button class="nol-arrow nol-arrow--left" aria-label="이전">‹</button>
+
+          <div class="nol-track">
+            <a class="nol-live" href="#">
+              <div class="nol-live__img">
+                <img src="../assets/632b17c3b0ecb2.60292758.png" alt="라이브 1" />
+                <span class="nol-chip">방송예정</span>
+              </div>
+              <div class="nol-live__title">[엘리시안 강촌] 아름다운 설경! 리프트권 특가!</div>
+              <div class="nol-live__time">오늘 15:00</div>
+            </a>
+
+            <a class="nol-live" href="#">
+              <div class="nol-live__img">
+                <img src="../assets/632b17c3b0ecb2.60292758.png" alt="라이브 2" />
+                <span class="nol-chip">방송예정</span>
+              </div>
+              <div class="nol-live__title">[켄싱턴 호텔&리조트] 켄싱턴 브랜드 총괄 특집</div>
+              <div class="nol-live__time">오늘 19:00</div>
+            </a>
+
+            <a class="nol-live" href="#">
+              <div class="nol-live__img">
+                <img src="../assets/632b17c3b0ecb2.60292758.png" alt="라이브 3" />
+                <span class="nol-chip nol-chip--dark">다시보기</span>
+              </div>
+              <div class="nol-live__title">[티웨이항공] 대한민국 대표 LCC 특가 찬스!</div>
+              <div class="nol-live__meta">쿠폰/전 노선 보러가기</div>
+            </a>
+
+            <a class="nol-live" href="#">
+              <div class="nol-live__img">
+                <img src="../assets/632b17c3b0ecb2.60292758.png" alt="라이브 4" />
+                <span class="nol-chip nol-chip--dark">다시보기</span>
+              </div>
+              <div class="nol-live__title">[멜로라이브] 뮤지컬 &lt;킹키부츠&gt; 최대 30% 할인</div>
+              <div class="nol-live__meta"><em>30%</em> 56,000원~</div>
+            </a>
+
+            <a class="nol-live" href="#">
+              <div class="nol-live__img">
+                <img src="../assets/632b17c3b0ecb2.60292758.png" alt="라이브 5" />
+                <span class="nol-chip nol-chip--dark">다시보기</span>
+              </div>
+              <div class="nol-live__title">[NOL LIVE] 25/26 비발디파크 리프트권</div>
+              <div class="nol-live__meta"><em>55%</em> 24,273원~</div>
+            </a>
+          </div>
+
+          <button class="nol-arrow nol-arrow--right" aria-label="다음">›</button>
+        </div>
+
+        <div class="nol-center">
+          <a class="nol-ghostbtn" href="#">NOL live 놀라운 혜택! 전체보기</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOTELCATION -->
+    <section class="nol-sec">
+      <div class="nol-container">
+        <div class="nol-sec__head nol-sec__head--row">
+          <h3>호캉스 어디로 갈까?</h3>
+          <div class="nol-tabs">
+            <button class="nol-tab nol-tab--active" type="button">강원</button>
+            <button class="nol-tab" type="button">제주</button>
+            <button class="nol-tab" type="button">경상</button>
+            <button class="nol-tab" type="button">전라충청</button>
+          </div>
+        </div>
+
+        <div class="nol-carousel">
+          <button class="nol-arrow nol-arrow--left" aria-label="이전">‹</button>
+
+          <div class="nol-track">
+            <a class="nol-card" href="#">
+              <div class="nol-card__img nol-card__img--big"><img src="../assets/632b17c3b0ecb2.60292758.png" alt="호텔 1" /></div>
+              <div class="nol-card__title">호텔 탑스텐 정동진</div>
+              <div class="nol-card__price"><em>7%</em> 93,000원~</div>
+            </a>
+
+            <a class="nol-card" href="#">
+              <div class="nol-card__img nol-card__img--big"><img src="../assets/632b17c3b0ecb2.60292758.png" alt="호텔 2" /></div>
+              <div class="nol-card__title">라마다호텔&스위트평창</div>
+              <div class="nol-card__price"><em>23%</em> 65,000원~</div>
+            </a>
+
+            <a class="nol-card" href="#">
+              <div class="nol-card__img nol-card__img--big"><img src="../assets/632b17c3b0ecb2.60292758.png" alt="호텔 3" /></div>
+              <div class="nol-card__title">강릉 씨마크 호텔</div>
+              <div class="nol-card__price"><em>67%</em> 286,000원~</div>
+            </a>
+
+            <a class="nol-card" href="#">
+              <div class="nol-card__img nol-card__img--big"><img src="../assets/632b17c3b0ecb2.60292758.png" alt="호텔 4" /></div>
+              <div class="nol-card__title">신라모노그램 강릉 호텔</div>
+              <div class="nol-card__price"><em>79%</em> 227,000원~</div>
+            </a>
+          </div>
+
+          <button class="nol-arrow nol-arrow--right" aria-label="다음">›</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="nol-footer">
+    <div class="nol-container">
+      <div class="nol-footer__top">
+        <div class="nol-footer__logo">NOL</div>
+        <select class="nol-footer__select" aria-label="패밀리 사이트">
+          <option>패밀리 사이트</option>
+          <option>야놀자</option>
+          <option>인터파크</option>
+        </select>
+      </div>
+
+      <div class="nol-footer__text">
+        <div>© Nol Universe Co., Ltd. All rights reserved.</div>
+        <div class="nol-footer__muted">데모용 푸터 영역입니다. 실제 약관/사업자 정보로 교체하세요.</div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

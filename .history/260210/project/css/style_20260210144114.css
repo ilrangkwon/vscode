@@ -1,0 +1,317 @@
+  <style>
+    :root{
+      --brand:#4f46ff;
+      --text:#111827;
+      --muted:#6b7280;
+      --line:#e5e7eb;
+      --bg:#ffffff;
+      --pill:#f3f4f6;
+      --soft:#eef2ff;
+      --shadow: 0 8px 24px rgba(17,24,39,.08);
+      --radius:18px;
+      --radius-sm:14px;
+      --max: 1200px;
+    }
+
+    *{ box-sizing:border-box; }
+    body{
+      margin:0;
+      font-family: pretendard, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+      color:var(--text);
+      background:#fafafa;
+      <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    }
+
+    /* Top header */
+    .topbar{
+      position:sticky;
+      top:0;
+      z-index:50;
+      background:var(--bg);
+      border-bottom:1px solid var(--line);
+    }
+    .topbar__inner{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:18px 20px;
+      display:flex;
+      align-items:center;
+      gap:18px;
+    }
+
+    .logo{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      font-weight:900;
+      letter-spacing:.5px;
+      color:var(--brand);
+      font-size:34px;
+      line-height:1;
+      user-select:none;
+    }
+
+    .search{
+      flex:1;
+      display:flex;
+      align-items:center;
+      gap:10px;
+      height:44px;
+      padding:0 14px;
+      background:var(--pill);
+      border:1px solid transparent;
+      border-radius:999px;
+      transition:.15s ease;
+      min-width: 240px;
+    }
+    .search:focus-within{
+      background:#fff;
+      border-color:#dbe2ff;
+      box-shadow: 0 0 0 4px rgba(79,70,255,.12);
+    }
+    .search svg{ width:18px; height:18px; color:var(--muted); }
+    .search input{
+      flex:1;
+      border:none;
+      outline:none;
+      background:transparent;
+      font-size:14px;
+    }
+    .search input::placeholder{ color:#9ca3af; }
+
+    .top-actions{
+      display:flex;
+      align-items:center;
+      gap:18px;
+    }
+    .action{
+      width:62px;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:6px;
+      color:var(--text);
+      text-decoration:none;
+      font-size:12px;
+    }
+    .action svg{
+      width:22px;height:22px;
+      color:#111827;
+    }
+    .action span{ color:#111827; font-weight:600; }
+
+    /* Main container */
+    .wrap{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:20px 20px 50px;
+    }
+
+    /* Promo banner */
+    .promo{
+      margin-top:14px;
+      background:#e8f1ff;
+      border-radius:14px;
+      padding:18px 18px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:18px;
+      color:#0f172a;
+    }
+    .promo__text{
+      text-align:center;
+      line-height:1.2;
+    }
+    .promo__text strong{
+      display:block;
+      font-size:16px;
+      font-weight:800;
+      margin-bottom:4px;
+    }
+    .promo__text small{
+      color:#334155;
+      font-size:12px;
+    }
+    .promo__btn{
+      margin-left:10px;
+      background:var(--brand);
+      color:#fff;
+      border:none;
+      padding:10px 14px;
+      border-radius:999px;
+      font-weight:800;
+      font-size:12px;
+      cursor:pointer;
+      display:flex;
+      align-items:center;
+      gap:8px;
+      box-shadow: 0 10px 24px rgba(79,70,255,.28);
+      white-space:nowrap;
+    }
+
+    /* Category row */
+    .cat-row{
+      margin-top:30px;
+      display:flex;
+      align-items:center;
+      gap:16px;
+    }
+
+    .hamburger{
+      width:64px;
+      height:64px;
+      border-radius:18px;
+      background:#fff;
+      box-shadow: var(--shadow);
+      border:1px solid #f1f5f9;
+      display:grid;
+      place-items:center;
+      flex:0 0 auto;
+      cursor:pointer;
+    }
+    .hamburger svg{ width:26px; height:26px; color:#111827; }
+
+    .cats{
+      flex:1;
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:10px;
+      overflow:auto;
+      padding:6px 2px;
+      scrollbar-width:none;
+    }
+    .cats::-webkit-scrollbar{ display:none; }
+
+    .cat{
+      width:90px;
+      flex:0 0 auto;
+      text-align:center;
+      text-decoration:none;
+      color:var(--text);
+      position:relative;
+    }
+    .cat__badge{
+      position:absolute;
+      top:-6px;
+      left:50%;
+      transform:translateX(-50%);
+      background:#eaf0ff;
+      color:var(--brand);
+      font-size:11px;
+      font-weight:800;
+      padding:4px 10px;
+      border-radius:999px;
+      border:1px solid #d9e2ff;
+      white-space:nowrap;
+    }
+    .cat__icon{
+      width:48px;height:48px;
+      margin:14px auto 6px;
+      border-radius:14px;
+      display:grid;
+      place-items:center;
+      background:#fff;
+      border:1px solid #f1f5f9;
+      box-shadow: 0 10px 24px rgba(17,24,39,.06);
+    }
+    .cat__icon svg{ width:26px;height:26px; }
+    .cat__label{
+      font-size:13px;
+      font-weight:700;
+      color:#111827;
+    }
+
+    /* bottom action cards */
+    .bottom-actions{
+      margin-top:26px;
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:16px;
+    }
+    .bigbtn{
+      background:#f3f4f6;
+      border:1px solid #eef2f7;
+      border-radius:16px;
+      padding:18px 18px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      text-decoration:none;
+      color:#111827;
+      font-weight:800;
+      min-height:64px;
+    }
+    .bigbtn svg{ width:18px;height:18px; color:#64748b; }
+
+    /* =========================
+   SEARCH FILL OVERRIDES
+   (기존 CSS 맨 아래에 추가)
+   ========================= */
+
+/* 헤더 한 줄 유지 + 검색이 우측을 밀지 않게 */
+.topbar .topbar__inner{
+  flex-wrap: nowrap !important;
+}
+
+/* 우측 영역은 고정(줄어들지 않게) */
+.topbar .top-actions{
+  flex: 0 0 auto !important;
+  flex-shrink: 0 !important;
+  white-space: nowrap !important;
+}
+
+/* 로고도 고정 */
+.topbar .logo{
+  flex: 0 0 auto !important;
+}
+
+/* ✅ 검색은 남는 공간만큼 채우되, 필요하면 줄어들 수 있어야 함 */
+.topbar .search{
+  flex: 1 1 0 !important;     /* fill */
+  min-width: 0 !important;     /* ⭐ 우측 밀림 방지 핵심 */
+  width: auto !important;      /* 기존 width:100% 무력화 */
+}
+
+/* ✅ input/placeholder가 최소폭을 잡아먹지 않게 */
+.topbar .search input{
+  width: 100% !important;
+  min-width: 0 !important;
+}
+
+/* (선택) 우측 텍스트 줄바꿈 방지 + 좁을 때 깨짐 완화 */
+.topbar .action{
+  width: auto !important;      /* 기존 62px 고정이면 텍스트 줄바꿈 유발 */
+}
+.topbar .action span{
+  white-space: nowrap !important;
+}
+
+/* (선택) 아주 좁은 화면에서 우측 1개 숨겨 검색 폭 확보 */
+@media (max-width: 520px){
+  .topbar .top-actions .action:last-child{
+    display: none !important;
+  }
+}
+/* (선택) 아주 좁은 화면에서 우측 1개 숨겨 검색 폭 확보 */
+@media (max-width: 520px){
+  .topbar .top-actions .action:last-child{
+    display: none !important;
+  }
+}
+
+    /* responsive */
+    @media (max-width: 880px){
+      .action{ width:auto; }
+      .action span{ display:none; }
+      .bottom-actions{ grid-template-columns: 1fr; }
+      .promo{ flex-direction:column; }
+      .promo__btn{ margin-left:0; }
+    }
+  </style>
