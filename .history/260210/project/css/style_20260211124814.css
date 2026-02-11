@@ -293,10 +293,6 @@ img{ max-width:100%; display:block; }
 
 .nol-sec__head{
   margin-bottom: 14px;
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 16px;
 }
 .nol-sec__head--row{
   display:flex;
@@ -305,7 +301,7 @@ img{ max-width:100%; display:block; }
   gap: 12px;
 }
 .nol-sec__head h3{
-  margin: 0 0 6px 0;
+  margin: 0;
   font-size: 26px;
   font-weight: 900;
   letter-spacing: -0.3px;
@@ -314,7 +310,6 @@ img{ max-width:100%; display:block; }
   color:#6b7280;
   font-size:14px;
   font-weight:700;
-  margin-top: 4px;
 }
 .nol-link{
   font-weight: 800;

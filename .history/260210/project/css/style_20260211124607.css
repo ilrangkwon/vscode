@@ -204,7 +204,7 @@ img{ max-width:100%; display:block; }
   width: 100%;
   height: auto;
   display: block;
-  border-radius: 18px;
+  border-radius: 12px;
   margin-bottom: 6px;
   object-fit: cover;
 }
@@ -225,7 +225,7 @@ img{ max-width:100%; display:block; }
 .cat__icon{
   width:48px;height:48px;
   margin:14px auto 6px;
-  border-radius:18px;
+  border-radius:14px;
   display:grid;
   place-items:center;
   background:#fff;
@@ -245,7 +245,7 @@ img{ max-width:100%; display:block; }
 .bigbtn{
   background:#f3f4f6;
   border:1px solid #eef2f7;
-  border-radius:18px;
+  border-radius:16px;
   padding:18px 18px;
   display:flex;
   align-items:center;
@@ -293,10 +293,6 @@ img{ max-width:100%; display:block; }
 
 .nol-sec__head{
   margin-bottom: 14px;
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 16px;
 }
 .nol-sec__head--row{
   display:flex;
@@ -305,7 +301,7 @@ img{ max-width:100%; display:block; }
   gap: 12px;
 }
 .nol-sec__head h3{
-  margin: 0 0 6px 0;
+  margin: 0;
   font-size: 26px;
   font-weight: 900;
   letter-spacing: -0.3px;
@@ -314,7 +310,6 @@ img{ max-width:100%; display:block; }
   color:#6b7280;
   font-size:14px;
   font-weight:700;
-  margin-top: 4px;
 }
 .nol-link{
   font-weight: 800;
@@ -443,7 +438,7 @@ img{ max-width:100%; display:block; }
   max-width: 632px;
   width: 100%;
   overflow: hidden;
-  border-radius: 18px;
+  border-radius: 22px;
   user-select: none;
   -webkit-user-select: none;
 }
@@ -463,7 +458,7 @@ img{ max-width:100%; display:block; }
 }
 
 .nol-hero__slide{
-  border-radius: 18px;
+  border-radius: 22px;
   overflow:hidden;
   min-height: 220px;
   display:flex;
@@ -537,7 +532,7 @@ img{ max-width:100%; display:block; }
   position:relative;
   width:100%;
   aspect-ratio: 3 / 4;
-  border-radius: 18px;
+  border-radius: 22px;
   overflow:hidden;
   background:#f3f4f6;
 }
@@ -593,7 +588,7 @@ img{ max-width:100%; display:block; }
   position: absolute !important;
   inset: 0 !important;
   height: 100% !important;
-  border-radius: 18px !important;
+  border-radius: 0 !important;
   overflow: hidden !important;
   box-shadow: none !important;
 }
@@ -671,7 +666,7 @@ img{ max-width:100%; display:block; }
   background:#fff !important;
   color:#111827 !important;
   border: 0 !important;
-  border-radius: 18px !important;
+  border-radius: 14px !important;
   padding: 12px 12px !important;
   font-weight: 1000 !important;
   text-align:center !important;
@@ -701,7 +696,7 @@ img{ max-width:100%; display:block; }
   background: rgba(255,255,255,.96) !important;
   color:#111827 !important;
   text-shadow: none !important;
-  border-radius: 18px !important;
+  border-radius: 14px !important;
   padding: 12px 12px !important;
   box-shadow: 0 10px 20px rgba(0,0,0,.18) !important;
   display:flex !important;
@@ -734,7 +729,7 @@ img{ max-width:100%; display:block; }
   min-width: 520px;
   height: 52px;
   padding: 0 18px;
-  border-radius: 18px;
+  border-radius: 16px;
   border: 1px solid #111827;
   text-decoration:none;
   color:#111827;
@@ -763,7 +758,7 @@ img{ max-width:100%; display:block; }
 .nol-footer__select{
   min-width: 220px;
   height: 36px;
-  border-radius: 18px;
+  border-radius: 10px;
   border:1px solid #e5e7eb;
   padding:0 36px 0 12px;
   background:#fff;
@@ -832,7 +827,7 @@ img{ max-width:100%; display:block; }
 
 .nol-ticket-inner {
   border: 2px solid #5b5bff;
-  border-radius: 18px;
+  border-radius: 16px;
   padding: 24px;
 }
 
@@ -859,7 +854,7 @@ img{ max-width:100%; display:block; }
 .nol-ticket-tabs .active {
   color: #5b5bff;
   font-weight: 900;
-  border-radius: 18px;
+  border-radius: 10px;
 }
 
 .nol-ticket-list {
@@ -877,7 +872,7 @@ img{ max-width:100%; display:block; }
 
 .ticket-card img {
   width: 100%;
-  border-radius: 18px;
+  border-radius: 8px;
 }
 
 .ticket-name {
@@ -949,7 +944,7 @@ img{ max-width:100%; display:block; }
 .nol-ticket-tabs button.active {
   color: #4f63ff;
   opacity: 1;
-  border-radius: 18px;
+  border-radius: 10px;
 }
 
 /* ===== List: 가로 카드 흐름 ===== */
@@ -1068,7 +1063,7 @@ img{ max-width:100%; display:block; }
   width: 120px;              /* 원본 포스터 크기 느낌 */
   height: 170px;
   object-fit: cover;
-  border-radius: 18px;
+  border-radius: 14px;
   box-shadow: 0 6px 18px rgba(0,0,0,0.12);
 }
 
@@ -1241,7 +1236,7 @@ img{ max-width:100%; display:block; }
   width: 100%;
   height: 230px;
   object-fit: cover;
-  border-radius: 18px;
+  border-radius: 12px;
   /* box-shadow 제거하여 심플하게 */
 }
 
